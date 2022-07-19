@@ -1,0 +1,15 @@
+
+USA
+https://www.ssa.gov/cgi-bin/popularnames.cgi
+
+Spain
+https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177009&menu=resultados&idp=1254734710990#!tabs-1254736195498
+
+Argentina
+https://datos.gob.ar/dataset/otros-nombres-personas-fisicas/archivo/otros_2.18
+
+Italy
+https://opendata.comune.re.it/dataset/nomi-piu-diffusi
+
+Portugal
+https://www.dn.pt/DNMultimedia/DOCS+PDFS/nomes.pdf
