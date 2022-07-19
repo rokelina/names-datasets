@@ -19,6 +19,8 @@ class Row:
         self.year = year
         self.male_count = 0
         self.fem_count = 0
+        self.m_gender = 'M'
+        self.f_gender = 'F'
         self.country = 'Chile'
 
     def update_male_count(self):
@@ -33,11 +35,11 @@ class Row:
 
     def male_names_as_array(self):
         '''Returns male names data as a list'''
-        return [self.rank, self.male_name, self.male_count, self.year, self.country]
+        return [self.rank, self.male_name, self.male_count, self.m_gender, self.year, self.country]
 
     def fem_names_as_array(self):
         '''Returns female names data as a list'''
-        return [self.rank, self.fem_name, self.fem_count, self.year, self.country]
+        return [self.rank, self.fem_name, self.fem_count, self.f_gender, self.year, self.country]
 
 
 class FileData:
@@ -131,14 +133,14 @@ new_directory = os.chdir(
 def write_male_names(m_table):
     with open('chile_male_names.csv', 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Rank', 'Name', 'Count', 'Year', 'Country'])
+        writer.writerow(['Rank', 'Name', 'Count', 'Gender', 'Year', 'Country'])
         writer.writerows(m_table)
 
 
 def write_female_names(f_table):
     with open('chile_female_names.csv', 'w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['Rank', 'Name', 'Count', 'Year', 'Country'])
+        writer.writerow(['Rank', 'Name', 'Count', 'Gender', 'Year', 'Country'])
         writer.writerows(f_table)
 
 
