@@ -17,7 +17,13 @@ for filename in os.listdir(dir_argentina):
                 year = row[2]
                 country = 'Argentina'
                 new_line = [name, count, year, country]
-                arg_table.append(new_line)
+                # since dataset contains many names with a frequency value of one,
+                # we'll append those names which frequency value is equal or greater than 50
+                if count >= 50:
+                    arg_table.append(new_line)
+                else:
+                    pass
+
 
 os.chdir('/Users/rosinascampino/Desktop/names_project/cleaned_data')
 
