@@ -58,7 +58,9 @@ class FileData:
                 for tr in soup.find_all('tr')
             ]
 
-            '''Next two lines get the total name count for that file'''
+            '''The second to last item contains the total name count of that year. Next three lines 
+            get the total name count for that file as int and assigns it to the attribute self.file_totals'''
+
             string = [i.replace('.', '') for i in file_contents[-2]]
             self.file_totals = int(
                 ''.join(filter(str.isdigit, ''.join(string))))
