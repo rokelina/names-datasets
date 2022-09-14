@@ -66,7 +66,7 @@ class FileData:
             return list_of_row_objects
 
 
-dir_usa = "/Users/rosinascampino/Desktop/names_project/html_usa"
+dir_usa = "/Users/rosinascampino/Desktop/names_project/usa/html_files"
 
 
 def get_file_info(directory):
@@ -99,7 +99,7 @@ f_table = [i.fem_names_as_array() for i in extracted_data]
 
 
 new_directory = os.chdir(
-    '/Users/rosinascampino/Desktop/names_project/html_usa/usa_csv')
+    '/Users/rosinascampino/Desktop/names_project/cleaned_data')
 
 
 def write_male_names(m_table):
