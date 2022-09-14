@@ -2,7 +2,7 @@ import csv
 import os
 
 
-dir_italy = '/Users/rosinascampino/Desktop/names_project/csv_italy'
+dir_italy = '/Users/rosinascampino/Desktop/names_project/italy'
 italy_table = [['Name', 'Count', 'Year', 'Country']]
 
 for filename in os.listdir(dir_italy):
@@ -21,6 +21,6 @@ for filename in os.listdir(dir_italy):
 
 os.chdir('/Users/rosinascampino/Desktop/names_project/cleaned_data')
 
-with open('italy_data.csv', 'w', newline='') as file:
+with open('italy_names.csv', 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerows(italy_table)
