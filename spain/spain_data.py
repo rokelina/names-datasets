@@ -32,7 +32,7 @@ def get_names_data(worksheets):
 
 def write_csv(list_of_data):
     os.chdir('/Users/rosinascampino/Desktop/names_project/cleaned_data')
-    with open('spain_data.csv', 'w', newline='') as file:
+    with open('spain_names.csv', 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['Name', 'Count', 'Year',
                         'Gender', 'Country'])
