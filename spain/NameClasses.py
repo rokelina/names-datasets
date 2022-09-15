@@ -14,6 +14,9 @@ class MaleNames:
     def __str__(self) -> str:
         return f"{self.male_name}, {self.male_count}, {self.male_year}, {self.male_gender}, {self.male_country}"
 
+    def as_array(self):
+        return [self.male_name, self.male_count, self.male_year, self.male_gender, self.male_country]
+
 
 @dataclass(init=True, frozen=True)
 class FemaleNames:
@@ -22,3 +25,9 @@ class FemaleNames:
     fem_year: int
     fem_gender: str = 'F'
     fem_country: str = 'Spain'
+
+    def __str__(self) -> str:
+        return f"{self.fem_name}, {self.fem_count}, {self.fem_year}, {self.fem_gender}, {self.fem_country}"
+
+    def as_array(self):
+        return [self.fem_name, self.fem_count, self.fem_year, self.fem_gender, self.fem_country]
