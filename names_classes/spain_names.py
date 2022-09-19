@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
-'''A set of classes to store female and male names'''
+'''A set of classes to store female and male names from the Spain dataset'''
 
 
 @dataclass(init=True, frozen=True)
-class MaleNames:
+class SpainMaleNames:
     male_name: str
     male_count: int
     male_year: int
@@ -19,7 +19,7 @@ class MaleNames:
 
 
 @dataclass(init=True, frozen=True)
-class FemaleNames:
+class SpainFemaleNames:
     fem_name: str
     fem_count: int
     fem_year: int
