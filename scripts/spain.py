@@ -18,18 +18,26 @@ def get_list_of_workbooks(directory_path):
     return list_of_workbooks
 
 
-# def write_year
+def write_dataset_year(workbooks):
+    for wb in workbooks:
+        year = wb.active.title
+        sheet = wb['TOTAL']
+        for row in sheet['C5:C105']:
+            dataset_year = int((year.split(' ')[1]))
+            for cell in row:
+                cell.value = dataset_year
+    return workbooks
 
-# sheet = wb['TOTAL']
 
-# '''Write the file year into each row'''
-# for row in sheet['C5:C105']:
-#     file_year = int((file.split('.')[0]))
-#     for cell in row:
-#         cell.value = file_year
+def get_worksheets(workbooks):
+    list_of_worksheets = []
+    for wb in workbooks:
+        sheet = wb['TOTAL']
+        list_of_worksheets.append(sheet)
+    return list_of_worksheets
 
 
-def get_names_data(worksheets):
+def get_rows_of_names(worksheets):
     '''Extracts all the rows of names from a list of worksheets'''
 
     list_of_names_data = []
@@ -39,16 +47,19 @@ def get_names_data(worksheets):
     return list_of_names_data
 
 
-def write_csv(list_of_data):
-    os.chdir('/Users/rosinascampino/Desktop/names_project/cleaned_data')
-    with open('spain_names.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(['Name', 'Count', 'Year',
-                        'Gender', 'Country'])
-        writer.writerows(list_of_data)
+all_wbs = write_dataset_year(get_list_of_workbooks(spain_dir))
+
+spain_data = get_rows_of_names(get_worksheets(all_wbs))
 
 
-spain_data = get_names_data(get_list_of_workbooks(spain_dir))
+# def write_csv(list_of_data):
+#     os.chdir('/Users/rosinascampino/Desktop/names_project/cleaned_data')
+#     with open('spain_names.csv', 'w', newline='') as file:
+#         writer = csv.writer(file)
+#         writer.writerow(['Name', 'Count', 'Year',
+#                         'Gender', 'Country'])
+#         writer.writerows(list_of_data)
+
 
 list_of_MaleNames_objects: List[SpainMaleNames] = []
 list_of_FemaleNames_objects: List[SpainFemaleNames] = []
@@ -63,4 +74,6 @@ for row in spain_data:
 all_names = [i.as_array() for i in list_of_MaleNames_objects] + [i.as_array()
                                                                  for i in list_of_FemaleNames_objects]
 
-write_csv(all_names)
+print(all_names[0])
+
+# write_csv(all_names)
