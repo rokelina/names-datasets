@@ -25,8 +25,8 @@ class UsaFilesData:
             for item in tables[2]:
                 if len(item) == 5:
                     '''we only want to append male name, male count, female name, female count and file year'''
-                    new_row = [item[1], item[2],
-                               item[3], item[4], self.file_year]
+                    new_row = [item[1], int(item[2].replace(',', '')),
+                               item[3], int(item[4].replace(',',  '')), self.file_year]
                     main_data.append(new_row)
             return main_data
 

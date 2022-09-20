@@ -6,7 +6,7 @@ class ItalyNames:
     name: str
     count: int
     year: int
-    gender: str = 'Null'
+    gender: str = None
     county: str = 'Italy'
 
     def __str__(self) -> str:
