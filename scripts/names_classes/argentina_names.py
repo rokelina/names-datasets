@@ -2,12 +2,12 @@ from dataclasses import dataclass
 
 
 @dataclass(init=True, frozen=True)
-class ItalyNames:
+class ArgentinaNames:
     name: str
     count: int
     year: int
     gender: str = 'Null'
-    county: str = 'Italy'
+    county: str = 'Argentina'
 
     def __str__(self) -> str:
         return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.county}"
