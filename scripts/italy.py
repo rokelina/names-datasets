@@ -24,4 +24,3 @@ def get_italy_names_objects(directory):
 italy_directory = "/Users/rosinascampino/Desktop/names_project/italy"
 
 italy_names_objects = get_italy_names_objects(italy_directory)
-print(italy_names_objects[-1])
