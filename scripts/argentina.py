@@ -22,4 +22,5 @@ def get_argentina_names_objects(directory):
 
 
 argentina_directory = "/Users/rosinascampino/Desktop/names_project/argentina"
+
 argentina_names_objects = get_argentina_names_objects(argentina_directory)

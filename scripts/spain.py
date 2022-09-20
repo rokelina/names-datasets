@@ -1,5 +1,4 @@
 from openpyxl import load_workbook
-import csv
 import os
 from names_classes.spain_names import SpainFemaleNames, SpainMaleNames
 from typing import List
@@ -42,15 +41,6 @@ def get_rows_of_names(worksheets):
     return list_of_names_data
 
 
-def write_csv(list_of_data):
-    os.chdir('/Users/rosinascampino/Desktop/names_project/cleaned_data')
-    with open('spain_names.csv', 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(['Name', 'Count', 'Year',
-                        'Gender', 'Country'])
-        writer.writerows(list_of_data)
-
-
 spain_dir = "/Users/rosinascampino/Desktop/names_project/spain"
 all_wbs = write_dataset_year(get_list_of_workbooks(spain_dir))
 spain_data = get_rows_of_names(get_main_worksheets(all_wbs))
@@ -68,6 +58,3 @@ for row in spain_data:
 
 all_names = [i.as_array() for i in list_of_MaleNames_objects] + [i.as_array()
                                                                  for i in list_of_FemaleNames_objects]
-
-
-write_csv(all_names)

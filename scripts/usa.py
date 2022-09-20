@@ -1,6 +1,5 @@
-from names_classes.usa_names import UsaMaleNames, UsaFemaleNames, UsaFilesData
 import os
-import csv
+from names_classes.usa_names import UsaMaleNames, UsaFemaleNames, UsaFilesData
 from typing import List
 
 
@@ -24,11 +23,11 @@ def get_list_of_male_names_objects(list_of_data):
 
 
 def get_list_of_female_names_objects(list_of_data):
-    usa_male_name_objects: List[UsaFemaleNames] = []
+    usa_female_name_objects: List[UsaFemaleNames] = []
     for row in list_of_data:
         new_object = UsaFemaleNames(row[2], row[3], row[4])
-        usa_male_name_objects.append(new_object)
-    return usa_male_name_objects
+        usa_female_name_objects.append(new_object)
+    return usa_female_name_objects
 
 
 usa_directory = "/Users/rosinascampino/Desktop/names_project/usa/html_files"
@@ -39,7 +38,7 @@ usa_data = []
 for file in usa_file_data:
     usa_data.extend(file.extract_data())
 
-usa_male_names = get_list_of_male_names_objects(usa_data)
-usa_female_names = get_list_of_female_names_objects(usa_data)
-usa_all_names_as_arrays = [i.as_array() for i in usa_male_names] + \
-    [i.as_array() for i in usa_female_names]
+usa_MaleNames_objects = get_list_of_male_names_objects(usa_data)
+usa_FemaleNames_objects = get_list_of_female_names_objects(usa_data)
+usa_all_names_as_arrays = [i.as_array() for i in usa_MaleNames_objects] + \
+    [i.as_array() for i in usa_FemaleNames_objects]

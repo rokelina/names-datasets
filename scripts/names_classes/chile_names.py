@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from bs4 import BeautifulSoup
 
 
-class ChileFilesData:
+class ChileFileData:
     def __init__(self, file_path, file_year):
         self.file_path = file_path
         self.file_year = file_year
