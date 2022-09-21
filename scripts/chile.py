@@ -1,5 +1,6 @@
 import os
-from names_classes.chile_names import ChileFileData, ChileFemaleNames, ChileMaleNames
+from name_classes import ChileFemaleNames, ChileMaleNames
+from file_data_classes import ChileFileData
 from typing import List
 
 
@@ -20,7 +21,8 @@ def get_list_of_male_names_objects(list_of_data):
     chile_male_name_objects: List[ChileMaleNames] = []
     for row in list_of_data:
         if len(row) == 8:
-            new_object = ChileMaleNames(row[1], row[2], row[6], row[7])
+            new_object = ChileMaleNames(row[1].title(), float(
+                row[2].replace("%", "").replace(",", ".")), row[6], row[7])
             chile_male_name_objects.append(new_object)
     return chile_male_name_objects
 
@@ -30,7 +32,8 @@ def get_list_of_female_names_objects(list_of_data):
     chile_female_name_objects: List[ChileFemaleNames] = []
     for row in list_of_data:
         if len(row) == 8:
-            new_object = ChileFemaleNames(row[4], row[5], row[6], row[7])
+            new_object = ChileFemaleNames(row[4].title(), float(
+                row[5].replace("%", "").replace(",", ".")), row[6], row[7])
             chile_female_name_objects.append(new_object)
     return chile_female_name_objects
 
@@ -42,7 +45,7 @@ def update_name_count(list_of_objects):
     return list_of_objects
 
 
-chile_directory = '/Users/rosinascampino/Desktop/names_project/chile/html_files'
+chile_directory = '/Users/rosinascampino/Desktop/names_project/raw_data/chile'
 
 list_of_rows = []
 file_data = get_file_data_objects(chile_directory)

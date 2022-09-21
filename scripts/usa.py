@@ -1,5 +1,6 @@
 import os
-from names_classes.usa_names import UsaMaleNames, UsaFemaleNames, UsaFilesData
+from name_classes import UsaMaleNames, UsaFemaleNames
+from file_data_classes import UsaFilesData
 from typing import List
 
 
@@ -30,7 +31,7 @@ def get_list_of_female_names_objects(list_of_data):
     return usa_female_name_objects
 
 
-usa_directory = "/Users/rosinascampino/Desktop/names_project/usa/html_files"
+usa_directory = "/Users/rosinascampino/Desktop/names_project/raw_data/usa"
 
 usa_file_data = get_file_data_objects(usa_directory)
 

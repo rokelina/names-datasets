@@ -1,6 +1,6 @@
 import os
 import csv
-from names_classes.argentina_names import ArgentinaNames
+from name_classes import ArgentinaNames
 from typing import List
 
 
@@ -21,6 +21,6 @@ def get_argentina_names_objects(directory):
                 return list_of_name_objects
 
 
-argentina_directory = "/Users/rosinascampino/Desktop/names_project/argentina"
+argentina_directory = "/Users/rosinascampino/Desktop/names_project/raw_data/argentina"
 
 argentina_names_objects = get_argentina_names_objects(argentina_directory)

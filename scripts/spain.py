@@ -1,6 +1,6 @@
-from openpyxl import load_workbook
 import os
-from names_classes.spain_names import SpainFemaleNames, SpainMaleNames
+from openpyxl import load_workbook
+from name_classes import SpainFemaleNames, SpainMaleNames
 from typing import List
 
 
@@ -41,7 +41,7 @@ def get_rows_of_names(worksheets):
     return list_of_names_data
 
 
-spain_dir = "/Users/rosinascampino/Desktop/names_project/spain"
+spain_dir = "/Users/rosinascampino/Desktop/names_project/raw_data/spain"
 all_wbs = write_dataset_year(get_list_of_workbooks(spain_dir))
 spain_data = get_rows_of_names(get_main_worksheets(all_wbs))
 
