@@ -1,4 +1,6 @@
 Pipfile.lock
 Pipfile
+db
+db.py
 .DS_Store
 *pycache*

@@ -11,5 +11,5 @@ https://datos.gob.ar/dataset/otros-nombres-personas-fisicas/archivo/otros_2.18
 Italy
 https://opendata.comune.re.it/dataset/nomi-piu-diffusi
 
-Portugal
-https://www.dn.pt/DNMultimedia/DOCS+PDFS/nomes.pdf
+Chile
+https://github.com/guydavis/babynamemap/tree/master/stats/south_america/chile 
