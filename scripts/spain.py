@@ -1,7 +1,6 @@
 import os
 from openpyxl import load_workbook
 from name_classes import SpainFemaleNames, SpainMaleNames
-from typing import List
 
 
 def get_list_of_workbooks(directory_path):
@@ -46,8 +45,8 @@ all_wbs = write_dataset_year(get_list_of_workbooks(spain_dir))
 spain_data = get_rows_of_names(get_main_worksheets(all_wbs))
 
 
-spain_MaleNames_objects: List[SpainMaleNames] = []
-spain_FemaleNames_objects: List[SpainFemaleNames] = []
+spain_MaleNames_objects: list[SpainMaleNames] = []
+spain_FemaleNames_objects: list[SpainFemaleNames] = []
 
 for row in spain_data:
     m_object = SpainMaleNames(row[0].title(), int(row[1]), row[2])
@@ -58,3 +57,4 @@ for row in spain_data:
 
 all_names = [i.as_array() for i in spain_MaleNames_objects] + [i.as_array()
                                                                for i in spain_FemaleNames_objects]
+print(all_names)

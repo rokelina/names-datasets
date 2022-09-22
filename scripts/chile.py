@@ -1,24 +1,23 @@
 import os
 from name_classes import ChileFemaleNames, ChileMaleNames
-from file_data_classes import ChileFileData
-from typing import List
+from file_data_classes import ChileFiles
 
 
 def get_file_data_objects(directory):
     """Iterates over a directory, returns a list of FileData objects"""
-    list_of_file_data = []
+    list_of_file_data: list[ChileFiles] = []
     for file in os.listdir(directory):
         if file.endswith('.html'):
             file_path = os.path.join(directory, file)
             file_year = int(file.split('.')[0])
-            file_data = ChileFileData(file_path, file_year)
+            file_data = ChileFiles(file_path, file_year)
             list_of_file_data.append(file_data)
     return list_of_file_data
 
 
 def get_list_of_male_names_objects(list_of_data):
     """Iterates over a list of rows and returns a list of MaleNames objects"""
-    chile_male_name_objects: List[ChileMaleNames] = []
+    chile_male_name_objects: list[ChileMaleNames] = []
     for row in list_of_data:
         if len(row) == 8:
             new_object = ChileMaleNames(row[1].title(), float(
@@ -29,7 +28,7 @@ def get_list_of_male_names_objects(list_of_data):
 
 def get_list_of_female_names_objects(list_of_data):
     """Iterates over a list of rows and returns a list of FemaleNames objects"""
-    chile_female_name_objects: List[ChileFemaleNames] = []
+    chile_female_name_objects: list[ChileFemaleNames] = []
     for row in list_of_data:
         if len(row) == 8:
             new_object = ChileFemaleNames(row[4].title(), float(

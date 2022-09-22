@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 '''A module to store file data classes, and methods to work with html files'''
 
 
-class ChileFileData:
+class ChileFiles:
     def __init__(self, file_path, file_year):
         self.file_path = file_path
         self.file_year = file_year
@@ -34,7 +34,7 @@ class ChileFileData:
             return main_data
 
 
-class UsaFilesData:
+class UsaFiles:
     def __init__(self, file_path, file_year):
         self.file_path = file_path
         self.file_year = file_year

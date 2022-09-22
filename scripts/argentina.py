@@ -1,11 +1,10 @@
 import os
 import csv
 from name_classes import ArgentinaNames
-from typing import List
 
 
 def get_argentina_names_objects(directory):
-    list_of_name_objects: List[ArgentinaNames] = []
+    list_of_name_objects: list[ArgentinaNames] = []
     for filename in os.listdir(directory):
         if filename.endswith('.csv'):
             fname = os.path.join(directory, filename)
