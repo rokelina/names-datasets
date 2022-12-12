@@ -57,4 +57,3 @@ for row in spain_data:
 
 all_names = [i.as_array() for i in spain_MaleNames_objects] + [i.as_array()
                                                                for i in spain_FemaleNames_objects]
-print(all_names)

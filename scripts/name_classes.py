@@ -75,7 +75,7 @@ class ChileMaleNames:
     country: str = 'Chile'
 
     def __str__(self) -> str:
-        return f"{self.name}, {self.count}, {self.year}, {self.gender} ,{self.country}"
+        return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.country}"
 
     def as_array(self):
         return [self.name, self.count, self.year, self.gender, self.country]
@@ -95,13 +95,28 @@ class ChileFemaleNames:
     country: str = 'Chile'
 
     def __str__(self) -> str:
-        return f"{self.name}, {self.count}, {self.year}, {self.gender} ,{self.country}"
+        return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.country}"
 
     def as_array(self):
         return [self.name, self.count, self.year, self.gender, self.country]
 
     def update_count(self):
         self.count = round((self.percent * self.totals) / 100)
+
+
+@dataclass(init=True, frozen=True)
+class UsaNames:
+    name: str
+    count: int
+    year: int
+    gender: str
+    country: str = 'USA'
+
+    def __str__(self) -> str:
+        return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.country}"
+
+    def as_array(self):
+        return [self.name, self.count, self.year, self.gender, self.country]
 
 
 @dataclass(init=True, frozen=True)
@@ -113,7 +128,7 @@ class UsaMaleNames:
     country: str = 'USA'
 
     def __str__(self) -> str:
-        return f"{self.name}, {self.count}, {self.year}, {self.gender} ,{self.country}"
+        return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.country}"
 
     def as_array(self):
         return [self.name, self.count, self.year, self.gender, self.country]
@@ -128,7 +143,7 @@ class UsaFemaleNames:
     country: str = 'USA'
 
     def __str__(self) -> str:
-        return f"{self.name}, {self.count}, {self.year}, {self.gender} ,{self.country}"
+        return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.country}"
 
     def as_array(self):
         return [self.name, self.count, self.year, self.gender, self.country]

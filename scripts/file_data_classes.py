@@ -32,32 +32,3 @@ class ChileFiles:
                 row.append(self.file_totals)
                 row.append(self.file_year)
             return main_data
-
-
-class UsaFiles:
-    def __init__(self, file_path, file_year):
-        self.file_path = file_path
-        self.file_year = file_year
-
-    def extract_data(self):
-        '''Extract td for each html file located at self.file_path'''
-
-        with open(self.file_path, 'r', encoding="iso-8859-1") as file:
-            soup = BeautifulSoup(file, "html.parser")
-            tables = [
-                [
-                    [td.get_text(strip=True) for td in tr.find_all('td')]
-                    for tr in table.find_all('tr')
-                ]
-                for table in soup.find_all('table')
-            ]
-
-            '''The data we need is on tables[2], checks for rows that have 5 objects in it (rank, male name, male count, female name, female count)'''
-            main_data = []
-            for item in tables[2]:
-                if len(item) == 5:
-                    '''we only want to append male name, male count, female name, female count and file year'''
-                    new_row = [item[1], int(item[2].replace(',', '')),
-                               item[3], int(item[4].replace(',',  '')), self.file_year]
-                    main_data.append(new_row)
-            return main_data
