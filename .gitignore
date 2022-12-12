@@ -1,9 +1,6 @@
-/csv_argentina
-/csv_italy
-/pdf_portugal
-/txt_spain
-/xlsx_spain
 Pipfile.lock
 Pipfile
+db
+db.py
 .DS_Store
 *pycache*
