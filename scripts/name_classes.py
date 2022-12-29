@@ -9,7 +9,7 @@ class ArgentinaNames:
     name: str
     count: int
     year: int
-    gender: str = None
+    gender: str = ''
     county: str = 'Argentina'
 
     def __str__(self) -> str:
@@ -24,7 +24,7 @@ class ItalyNames:
     name: str
     count: int
     year: int
-    gender: str = None
+    gender: str = ''
     county: str = 'Italy'
 
     def __str__(self) -> str:
