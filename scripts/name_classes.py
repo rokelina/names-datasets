@@ -9,7 +9,7 @@ class ArgentinaNames:
     name: str
     count: int
     year: int
-    gender: str = None
+    gender: str = ''
     county: str = 'Argentina'
 
     def __str__(self) -> str:
@@ -24,7 +24,7 @@ class ItalyNames:
     name: str
     count: int
     year: int
-    gender: str = None
+    gender: str = ''
     county: str = 'Italy'
 
     def __str__(self) -> str:
@@ -110,36 +110,6 @@ class UsaNames:
     count: int
     year: int
     gender: str
-    country: str = 'USA'
-
-    def __str__(self) -> str:
-        return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.country}"
-
-    def as_array(self):
-        return [self.name, self.count, self.year, self.gender, self.country]
-
-
-@dataclass(init=True, frozen=True)
-class UsaMaleNames:
-    name: str
-    count: int
-    year: int
-    gender: str = 'M'
-    country: str = 'USA'
-
-    def __str__(self) -> str:
-        return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.country}"
-
-    def as_array(self):
-        return [self.name, self.count, self.year, self.gender, self.country]
-
-
-@dataclass(init=True, frozen=True)
-class UsaFemaleNames:
-    name: str
-    count: int
-    year: int
-    gender: str = 'F'
     country: str = 'USA'
 
     def __str__(self) -> str:

@@ -1,5 +1,6 @@
 import os
 from name_classes import UsaNames
+from csv_utils import write_csv_file
 
 
 def get_list_of_name_objects(directory):
@@ -18,3 +19,6 @@ def get_list_of_name_objects(directory):
 
 usa_dir = "/Users/rosinascampino/Desktop/names_project/raw_data/usa"
 usa_names = get_list_of_name_objects(usa_dir)
+usa_names_as_array = [i.as_array() for i in usa_names]
+
+write_csv_file(usa_names_as_array, "usa_names.csv")

@@ -1,6 +1,7 @@
 import os
 from name_classes import ChileFemaleNames, ChileMaleNames
 from file_data_classes import ChileFiles
+from csv_utils import write_csv_file
 
 
 def get_file_data_objects(directory):
@@ -50,8 +51,8 @@ list_of_rows = []
 file_data = get_file_data_objects(chile_directory)
 
 for file in file_data:
+    # calls the extract_data() method on each FileData object and adds all of its contents to an empty list
     list_of_rows.extend(file.extract_data())
-    # calls the extract_data() method on each FileData object and adds all the contents to an empty list
 
 chile_MaleNames_objects = update_name_count(
     get_list_of_male_names_objects(list_of_rows))
@@ -61,3 +62,8 @@ chile_FemaleNames_objects = update_name_count(
 
 chile_male_names = [i.as_array() for i in chile_MaleNames_objects]
 chile_female_names = [i.as_array() for i in chile_FemaleNames_objects]
+
+chile_all_names = [i.as_array() for i in chile_MaleNames_objects] + \
+    [i.as_array() for i in chile_FemaleNames_objects]
+
+write_csv_file(chile_all_names, "chile_names.csv")

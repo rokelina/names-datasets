@@ -1,6 +1,7 @@
 import os
 import csv
 from name_classes import ArgentinaNames
+from csv_utils import write_csv_file
 
 
 def get_argentina_names_objects(directory):
@@ -23,3 +24,6 @@ def get_argentina_names_objects(directory):
 argentina_directory = "/Users/rosinascampino/Desktop/names_project/raw_data/argentina"
 
 argentina_names_objects = get_argentina_names_objects(argentina_directory)
+argetina_names_as_array = [i.as_array() for i in argentina_names_objects]
+
+write_csv_file(argetina_names_as_array, "argentina_names.csv")
