@@ -12,7 +12,7 @@ def get_list_of_name_objects(directory):
                 for row in file:
                     line = row.split(',')
                     new_object = UsaNames(line[0], int(
-                        line[2]), int(filename[3:7]), line[1])
+                        line[2]), int(filename[3:7]), str(line[1]))
                     list_of_name_objects.append(new_object)
     return list_of_name_objects
 
