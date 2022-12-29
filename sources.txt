@@ -1,15 +1,20 @@
 
 USA
+1880 - 2021
 https://www.ssa.gov/cgi-bin/popularnames.cgi
 
 Spain
+Names from 2002 - 2021
 https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177009&menu=resultados&idp=1254734710990#!tabs-1254736195498
 
 Argentina
+Names from 1990 - 2015
 https://datos.gob.ar/dataset/otros-nombres-personas-fisicas/archivo/otros_2.18
 
 Italy
+Names from 2015 - 2020
 https://opendata.comune.re.it/dataset/nomi-piu-diffusi
 
 Chile
+Names from 1990 - 1999, 2003- 2005
 https://github.com/guydavis/babynamemap/tree/master/stats/south_america/chile 
