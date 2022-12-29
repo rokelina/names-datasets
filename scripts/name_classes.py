@@ -110,7 +110,7 @@ class UsaNames:
     count: int
     year: int
     gender: str
-    country: str = 'USA'
+    country: str = 'US'
 
     def __str__(self) -> str:
         return f"{self.name}, {self.count}, {self.year}, {self.gender}, {self.country}"

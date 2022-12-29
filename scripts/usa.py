@@ -21,4 +21,4 @@ usa_dir = "/Users/rosinascampino/Desktop/names_project/raw_data/usa"
 usa_names = get_list_of_name_objects(usa_dir)
 usa_names_as_array = [i.as_array() for i in usa_names]
 
-write_csv_file(usa_names_as_array, "usa_names.csv")
+write_csv_file(usa_names_as_array, "us_names.csv")
