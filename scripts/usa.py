@@ -12,7 +12,7 @@ def get_list_of_name_objects(directory):
                 for row in file:
                     line = row.split(',')
                     new_object = UsaNames(line[0], int(
-                        line[2]), int(filename[3:7]), line[1])
+                        line[2]), int(filename[3:7]), str(line[1]))
                     list_of_name_objects.append(new_object)
     return list_of_name_objects
 
@@ -21,4 +21,4 @@ usa_dir = "/Users/rosinascampino/Desktop/names_project/raw_data/usa"
 usa_names = get_list_of_name_objects(usa_dir)
 usa_names_as_array = [i.as_array() for i in usa_names]
 
-write_csv_file(usa_names_as_array, "usa_names.csv")
+write_csv_file(usa_names_as_array, "us_names.csv")

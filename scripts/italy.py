@@ -18,10 +18,10 @@ def get_italy_names_objects(directory):
                     year = int(filename.split('.')[0])
                     new_object = ItalyNames(name, count, year)
                     list_of_name_objects.append(new_object)
-                return list_of_name_objects
+    return list_of_name_objects
 
 
-italy_directory = "/Users/rosinascampino/Desktop/names_project/raw_data/italy"
+italy_directory = "/Users/rosinascampino/Desktop/names_project/raw_data/italy/"
 
 italy_names_objects = get_italy_names_objects(italy_directory)
 italy_names_as_array = [i.as_array() for i in italy_names_objects]

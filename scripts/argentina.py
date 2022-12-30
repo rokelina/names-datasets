@@ -17,12 +17,12 @@ def get_argentina_names_objects(directory):
                     count = int(row[1])
                     year = int(row[2])
                     new_object = ArgentinaNames(name, count, year)
-                    list_of_name_objects.append(new_object)
-                return list_of_name_objects
+                    if new_object.count >= 5:
+                        list_of_name_objects.append(new_object)
+    return list_of_name_objects
 
 
 argentina_directory = "/Users/rosinascampino/Desktop/names_project/raw_data/argentina"
-
 argentina_names_objects = get_argentina_names_objects(argentina_directory)
 argetina_names_as_array = [i.as_array() for i in argentina_names_objects]
 
